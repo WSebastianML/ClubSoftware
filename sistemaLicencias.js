@@ -1,11 +1,16 @@
 let mayorEdad = false
 let pago = true
 let pagoExtra = true
-//let acceso = pagoExtra || mayorEdad
 let pudeConseguirLicencia = (pagoExtra || mayorEdad) && pago 
 
-if(pudeConseguirLicencia){
-    console.log("Puede conseguir licencia")
+if(!pago){
+    console.log("No puede conseguir la licencia, porque no realizo el pago")
+}else if(!mayorEdad){
+    if(pagoExtra){
+        console.log("Puede conseguir la licencia aunque sea menor de edad")
+    }else{
+        console.log("Si pago, pero debe pagar extra porque es menor de edad")
+    }
 }else{
-    console.log("No puede conseguir la licencia")
+    console.log("Puede conseguir la licencia")
 }
