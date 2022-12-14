@@ -1,6 +1,13 @@
-let mayorEdad = false
-let pago = true
-let pagoExtra = true
+let edad = parseInt(process.argv[2])
+let cantidadPago = parseFloat(process.argv[3])
+
+let mayorEdad = edad >= 18
+console.log(mayorEdad)
+let pago = cantidadPago == 30
+let pagoExtra = cantidadPago == 200
+console.log(pago)
+console.log(pagoExtra)
+
 let pudeConseguirLicencia = (pagoExtra || mayorEdad) && pago 
 
 if(!pago){
